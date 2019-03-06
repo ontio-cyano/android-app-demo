@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendData(String data) {
         if (isInstallApp(MainActivity.this)) {
-            Toast.makeText(MainActivity.this, "zhuang l ", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "installed ", Toast.LENGTH_LONG).show();
         }
         Intent intent = new Intent("android.intent.action.VIEW");
-        intent.setData(Uri.parse("cyano://com.github.cyano?data=" + data));
+        intent.setData(Uri.parse("ont://com.github.ont?data=" + data));
         intent.addCategory("android.intent.category.DEFAULT");
         startActivity(intent);
     }
