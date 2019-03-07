@@ -1,6 +1,15 @@
 # android-app-demo
 android APP demo is a demo support wake up wallet for login and invoke smartcontract.
 
+```
+
+ Intent intent = new Intent("android.intent.action.VIEW");
+ intent.setData(Uri.parse("ont://com.github.ont?data=" + data));
+ intent.addCategory("android.intent.category.DEFAULT");
+ startActivity(intent);
+        
+```
+
 This app and two wallets can be download from here: http://101.132.193.149/files2/ 
 
 
