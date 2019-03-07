@@ -1,4 +1,4 @@
-package com.github.cyano.jni;
+package com.github.cyano.demo;
 
 import org.junit.Test;
 

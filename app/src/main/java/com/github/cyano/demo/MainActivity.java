@@ -1,12 +1,13 @@
-package com.github.cyano.jni;
+package com.github.cyano.demo;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,11 +17,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Used to load the 'native-lib' library on application startup.
-//    static {
-//        System.loadLibrary("native-lib");
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tvLogin = findViewById(R.id.sample_text);
         TextView tvInvoke = findViewById(R.id.sample_text1);
-        tvLogin.setText(new JNIUtils().stringFromJNI());
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,20 +45,16 @@ public class MainActivity extends AppCompatActivity {
     private void sendData(String data) {
         if (isInstallApp(MainActivity.this)) {
             Toast.makeText(MainActivity.this, "installed ", Toast.LENGTH_LONG).show();
-        } else {
-            //TODO please install wallet
+            String sendData = Base64.encodeToString(Uri.encode(data).getBytes(), Base64.NO_WRAP);
+            Intent intent = new Intent("android.intent.action.VIEW");
+            intent.setData(Uri.parse("ontprovider://ont.io?param=" + sendData));
+            intent.addCategory("android.intent.category.DEFAULT");
+            startActivity(intent);
+        }else {
+            Toast.makeText(MainActivity.this, "Not Installed", Toast.LENGTH_LONG).show();
         }
-        Intent intent = new Intent("android.intent.action.VIEW");
-        intent.setData(Uri.parse("ont://com.github.ont?data=" + data));
-        intent.addCategory("android.intent.category.DEFAULT");
-        startActivity(intent);
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-//    public native String stringFromJNI();
     private static String PACK_NAME = "com.github.ont.cyanowallet";
 
     public static boolean isInstallApp(Context context) {

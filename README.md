@@ -1,10 +1,12 @@
 # android-app-demo
 android APP demo is a demo support wake up wallet for login and invoke smartcontract.
 
+[Mobile Provider](http://dev-docs.ont.io/#/docs-cn/cyano/02-mobile-provider)
 ```
+ String sendData = Base64.encodeToString(Uri.encode(data).getBytes(), Base64.NO_WRAP);
 
  Intent intent = new Intent("android.intent.action.VIEW");
- intent.setData(Uri.parse("ont://com.github.ont?data=" + data));
+ intent.setData(Uri.parse("ontprovider://ont.io?param=" + sendData));
  intent.addCategory("android.intent.category.DEFAULT");
  startActivity(intent);
         

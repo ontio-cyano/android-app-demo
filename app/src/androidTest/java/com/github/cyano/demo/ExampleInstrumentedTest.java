@@ -1,4 +1,4 @@
-package com.github.cyano.jni;
+package com.github.cyano.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.github.cyano.jni", appContext.getPackageName());
+        assertEquals("com.github.cyano.demo", appContext.getPackageName());
     }
 }
