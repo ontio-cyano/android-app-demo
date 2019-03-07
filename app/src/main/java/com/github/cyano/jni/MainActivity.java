@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private void sendData(String data) {
         if (isInstallApp(MainActivity.this)) {
             Toast.makeText(MainActivity.this, "installed ", Toast.LENGTH_LONG).show();
+        } else {
+            //TODO please install wallet
         }
         Intent intent = new Intent("android.intent.action.VIEW");
         intent.setData(Uri.parse("ont://com.github.ont?data=" + data));
