@@ -6,6 +6,6 @@ This app and two wallets can be download from here: http://101.132.193.149/files
 
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ontio-cyano/android-app-demo/master/app.jpg" height="350" width="200">
-  <img src="https://raw.githubusercontent.com/ontio-cyano/android-app-demo/master/wakeup.jpg" height="350" width="200">
+  <img src="https://raw.githubusercontent.com/ontio-cyano/android-app-demo/master/demo.png" height="350" width="200">
+  <img src="https://raw.githubusercontent.com/ontio-cyano/android-app-demo/master/wakeup.png" height="350" width="200">
 </div>
