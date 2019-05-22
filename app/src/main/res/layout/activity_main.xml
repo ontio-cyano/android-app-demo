@@ -13,24 +13,58 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Test Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:text="Test Login"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/sample_text1"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="Test Invoke"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:text="Test Invoke"/>
+        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/rg_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_ont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="ont"/>
+        <RadioButton
+            android:id="@+id/rb_ong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ong"/>
+    </RadioGroup>
 
+    <EditText
+        android:id="@+id/et_receiver"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="receiver"/>
+    <EditText
+        android:id="@+id/et_payer"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="payer"/>
+    <EditText
+        android:id="@+id/et_amount"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="amount"/>
 </LinearLayout>
