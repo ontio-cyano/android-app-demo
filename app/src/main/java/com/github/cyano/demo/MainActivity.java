@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
         tvInvoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!TextUtils.isEmpty(etPayer.getText().toString()) && !TextUtils.isEmpty(etReceiver.getText().toString()) && !TextUtils.isEmpty(etAmount.getText().toString())) {
-                    String payer = etPayer.getText().toString();
-                    String receiver = etReceiver.getText().toString();
+                if (!TextUtils.isEmpty(etAmount.getText().toString())) {
+                    String payer = etPayer.getText().toString().isEmpty() ? "%address" : etPayer.getText().toString();
+                    String receiver = etReceiver.getText().toString().isEmpty() ? "%address" : etReceiver.getText().toString();
                     String amountStr = etAmount.getText().toString();
                     Map param;
                     if (rbOng.isChecked()) {
