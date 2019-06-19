@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tvLogin = findViewById(R.id.sample_text);
+        TextView tvSign = findViewById(R.id.sample_sign);
         TextView tvInvoke = findViewById(R.id.sample_text1);
         final EditText etPayer = findViewById(R.id.et_payer);
         final EditText etReceiver = findViewById(R.id.et_receiver);
@@ -43,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String data = "{\"action\":\"login\",\"id\":\"10ba038e-48da-487b-96e8-8d3b99b6d18a\",\"version\":\"v1.0.0\",\"params\":{\"type\":\"ontid or account\",\"dappName\":\"dapp Name\",\"dappIcon\":\"dapp Icon\",\"message\":\"helloworld\",\"expire\":1546415363,\"callback\":\"http://127.0.0.1:80/login/callback\"}}";
+                sendData(data);
+            }
+        });
+        tvSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String data = "{\"action\":\"signMessage\",\"id\":\"10ba038e-48da-487b-96e8-8d3b99b6d18a\",\"version\":\"v1.0.0\",\"params\":{\"type\":\"ontid or account\",\"dappName\":\"dapp Name\",\"dappIcon\":\"dapp Icon\",\"message\":\"helloworld\",\"expire\":1546415363,\"callback\":\"http://127.0.0.1:80/login/callback\"}}";
                 sendData(data);
             }
         });
